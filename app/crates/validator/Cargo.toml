@@ -1,0 +1,21 @@
+[package]
+name = "bitmodel-validator"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[[bin]]
+name = "bitmodel-validator"
+path = "src/main.rs"
+
+[dependencies]
+bitmodel-core.workspace = true
+bitmodel-node.workspace = true
+clap = { workspace = true, features = ["env"] }
+tokio.workspace = true
+anyhow.workspace = true
+indicatif.workspace = true
+reqwest.workspace = true
+futures-lite.workspace = true
+tracing-subscriber.workspace = true

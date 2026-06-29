@@ -1,0 +1,16 @@
+[Unit]
+Description=BitModel registry (manifests + seeder announces, SQLite)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+EnvironmentFile=/etc/bitmodel.env
+ExecStart=/opt/bitmodel/bin/bitmodel-registry
+Restart=always
+RestartSec=3
+Environment=RUST_LOG=info
+WorkingDirectory=/opt/bitmodel/data
+
+[Install]
+WantedBy=multi-user.target

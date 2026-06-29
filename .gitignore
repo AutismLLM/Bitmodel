@@ -1,0 +1,36 @@
+# Rust build artifacts
+target/
+**/*.rs.bk
+
+# Internal planning / specs / ops notes — NEVER publish
+internal/
+vps.md
+# real (generated) trust config; commit trust.toml.example instead
+**/deploy/keys/
+**/trust.toml
+
+# Secrets / keys / env
+*.key
+!*.pub
+*.env
+!*.env.example
+*.secret
+
+# Runtime data / state
+*.db
+*.db-wal
+*.db-shm
+**/blobs/
+node.key
+registry.db*
+*-data/
+*-stage/
+
+# Local editor / agent settings
+.claude/settings.local.json
+.DS_Store
+
+# Node / landing page (future)
+landingpage/node_modules/
+landingpage/dist/
+landingpage/.next/

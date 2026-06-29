@@ -1,0 +1,43 @@
+[workspace]
+resolver = "2"
+members = ["crates/core", "crates/node", "crates/validator", "crates/cli", "crates/registry"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+rust-version = "1.96"
+
+[workspace.dependencies]
+bitmodel-core = { path = "crates/core" }
+bitmodel-node = { path = "crates/node" }
+
+# core
+blake3 = { version = "1.8", features = ["rayon", "mmap"] }
+ed25519-dalek = { version = "2.2", features = ["rand_core"] }
+rand = "0.8"
+hex = "0.4"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+toml = "0.8"
+anyhow = "1"
+thiserror = "2"
+
+# node / async
+tokio = { version = "1", features = ["full"] }
+futures-lite = "2"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# cli
+clap = { version = "4", features = ["derive"] }
+indicatif = "0.17"
+reqwest = { version = "0.12", default-features = false, features = ["rustls-tls", "json", "stream"] }
+
+# registry
+axum = "0.8"
+rusqlite = { version = "0.32", features = ["bundled"] }
+
+[profile.release]
+opt-level = 3
+lto = "thin"

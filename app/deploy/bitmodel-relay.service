@@ -1,0 +1,15 @@
+[Unit]
+Description=BitModel self-hosted iroh relay (NAT hole-punch fallback)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+# --dev runs a plain-HTTP relay on :3340 + STUN on :3478 (no TLS / domain needed).
+ExecStart=/opt/bitmodel/bin/iroh-relay --dev
+Restart=always
+RestartSec=3
+Environment=RUST_LOG=info
+
+[Install]
+WantedBy=multi-user.target

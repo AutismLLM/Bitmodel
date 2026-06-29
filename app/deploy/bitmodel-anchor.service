@@ -1,0 +1,24 @@
+[Unit]
+Description=BitModel anchor validator+seeder (fetch origin -> sign -> publish -> seed)
+After=network-online.target bitmodel-registry.service bitmodel-relay.service
+Wants=network-online.target
+Requires=bitmodel-registry.service
+
+[Service]
+Type=simple
+EnvironmentFile=/etc/bitmodel.env
+# Fetches the model from origin, signs+publishes the manifest, then seeds forever
+# (heartbeating to the registry). Idempotent across restarts.
+ExecStart=/opt/bitmodel/bin/bitmodel-validator \
+  --model ${BITMODEL_MODEL} --version ${BITMODEL_MODEL_VERSION} \
+  --origin-base ${BITMODEL_ORIGIN_BASE} --files ${BITMODEL_MODEL_FILES} \
+  --work /opt/bitmodel/data/model --key /opt/bitmodel/keys/validator.key \
+  --id ${BITMODEL_VALIDATOR_ID} --data-dir /opt/bitmodel/data/validator-data \
+  --keep-seeding
+Restart=always
+RestartSec=10
+Environment=RUST_LOG=info
+WorkingDirectory=/opt/bitmodel/data
+
+[Install]
+WantedBy=multi-user.target

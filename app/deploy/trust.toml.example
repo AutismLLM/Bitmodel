@@ -1,0 +1,10 @@
+# BitModel client trust config — the pinned validator keyring + quorum.
+# Generate your own with:  bitmodel keygen --id mirror-a
+# then copy the printed [[validator]] block here. Public keys only — safe to share.
+# `deploy.sh` writes the real `trust.toml` (gitignored) from your generated key.
+
+quorum = 1
+
+[[validator]]
+id  = "mirror-a"
+key = "ed25519:<your-validator-public-key-hex>"
