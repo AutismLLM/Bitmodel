@@ -12,7 +12,12 @@ jobs:
   linux-x86_64:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout (no external actions)
+        run: |
+          git init -q .
+          git remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          git -c protocol.version=2 fetch -q --depth 1 origin "${GITHUB_SHA}"
+          git checkout -q "${GITHUB_SHA}"
 
       - name: Install musl toolchain
         run: |
