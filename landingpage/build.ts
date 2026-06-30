@@ -21,7 +21,7 @@ const dist = new URL("dist/", here);
 
 const PAGES = ["index.html"];
 const GITHUB_URL = "https://github.com/AutismLLM/Bitmodel";
-const DOWNLOAD_URL = "https://github.com/AutismLLM/Bitmodel/releases";
+const DOWNLOAD_URL = "https://github.com/AutismLLM/Bitmodel/releases/latest";
 const WHITEPAPER_URL = "./Modelmirror-Whitepaper.pdf";
 const WHITEPAPER_SRC = new URL("../../../openmodel-mirror-spec/Modelmirror-Whitepaper.pdf", here);
 

@@ -1,0 +1,53 @@
+name: release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  linux-x86_64:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install musl toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y musl-tools
+
+      - name: Add musl target
+        working-directory: app
+        run: rustup target add x86_64-unknown-linux-musl
+
+      - name: Build static binaries
+        working-directory: app
+        run: |
+          cargo build --release --target x86_64-unknown-linux-musl \
+            -p bitmodel-cli -p bitmodel-registry -p bitmodel-validator
+
+      - name: Package
+        run: |
+          TAG="${GITHUB_REF_NAME}"
+          BIN=app/target/x86_64-unknown-linux-musl/release
+          strip "$BIN/bitmodel" "$BIN/bitmodel-registry" "$BIN/bitmodel-validator"
+          mkdir -p dist
+          cp "$BIN/bitmodel" dist/bitmodel
+          tar -C "$BIN" -czf "dist/bitmodel-${TAG}-x86_64-linux.tar.gz" \
+            bitmodel bitmodel-registry bitmodel-validator
+          ( cd dist && sha256sum bitmodel "bitmodel-${TAG}-x86_64-linux.tar.gz" > SHA256SUMS )
+          ls -la dist
+
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${GITHUB_REF_NAME}" \
+            dist/bitmodel \
+            "dist/bitmodel-${GITHUB_REF_NAME}-x86_64-linux.tar.gz" \
+            dist/SHA256SUMS \
+            --title "${GITHUB_REF_NAME}" \
+            --generate-notes
