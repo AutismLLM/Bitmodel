@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BitModel. Peer-to-peer mirroring for open-source model weights.</title>
+  <meta name="description" content="BitModel moves open-source model files from anyone who has them to anyone who wants them. Checked down to the byte, resumable, and able to cross home networks. An open-source research project by Modelmirror.org.">
+  <meta name="color-scheme" content="dark light">
+  <meta name="ui-version" content="{{UI_VERSION}}">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <script>(function(){try{if(!localStorage.getItem('mm-theme'))localStorage.setItem('mm-theme','dark');}catch(e){}})();</script>
+  <script>{{NO_FLASH}}</script>
+</head>
+<body>
+  <a class="mm-skip-link" href="#main">Skip to content</a>
+
+  <header class="mm-container site-header">
+    <a class="site-brand" href="#main">{{logo}}BitModel</a>
+    <nav class="mm-cluster" aria-label="Primary">
+      <a class="mm-nav__link site-nav-link" href="#how">How it works</a>
+      <a class="mm-nav__link site-nav-link" href="#roadmap">Roadmap</a>
+      <a class="mm-nav__link site-nav-link" href="{{GITHUB_URL}}" target="_blank" rel="noopener">GitHub</a>
+      <mm-theme-toggle></mm-theme-toggle>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="mm-hero">
+      <span class="mm-hero__aura"></span>
+      <div class="mm-container mm-center mm-stack mm-stack--6">
+        <span class="mm-eyebrow">An open-source research project by Modelmirror.org</span>
+        <h1 class="mm-hero__title">Mirror open-source model weights, peer to peer.</h1>
+        <p class="mm-hero__lead">BitModel moves open-source model files from anyone who has them to anyone who wants them. Checked down to the byte, resumable, and able to cross home networks. It is early and we are still building, in the open.</p>
+        <div class="mm-hero__actions">
+          <a class="mm-btn mm-btn--primary mm-btn--lg" href="{{DOWNLOAD_URL}}" target="_blank" rel="noopener">{{icon:download}}Download</a>
+          <a class="mm-btn mm-btn--secondary mm-btn--lg" href="{{GITHUB_URL}}" target="_blank" rel="noopener">{{icon:code}}View on GitHub{{icon:external:16}}</a>
+        </div>
+        <div class="mm-cluster mm-cluster--center" style="--mm-cluster-gap: var(--mm-space-5)">
+          <span class="mm-cluster" style="--mm-cluster-gap: var(--mm-space-2)"><span class="site-tick">{{icon:check:18}}</span><span class="mm-text-sm mm-text-muted">Open source</span></span>
+          <span class="mm-cluster" style="--mm-cluster-gap: var(--mm-space-2)"><span class="site-tick">{{icon:check:18}}</span><span class="mm-text-sm mm-text-muted">Model files only</span></span>
+          <span class="mm-cluster" style="--mm-cluster-gap: var(--mm-space-2)"><span class="site-tick">{{icon:check:18}}</span><span class="mm-text-sm mm-text-muted">Checked by signature</span></span>
+        </div>
+        <a class="mm-nav__link mm-text-sm" href="{{WHITEPAPER_URL}}" target="_blank" rel="noopener" style="display:-webkit-inline-flex;display:inline-flex;-webkit-align-items:center;align-items:center;gap:var(--mm-space-2)">{{icon:file-text:16}}Read the whitepaper</a>
+      </div>
+    </section>
+
+    <!-- WHAT IT IS -->
+    <section class="mm-section" id="how">
+      <div class="mm-container">
+        <div class="mm-stack mm-stack--8">
+          <div class="mm-section-head">
+            <span class="mm-eyebrow">What it is</span>
+            <h2>A small trusted group signs the truth. Anyone can seed.</h2>
+            <p class="mm-section-head__lead">Two layers, kept apart on purpose. A few signers vouch for what a model is. Everyone else supplies bandwidth, with no trust needed, because every byte is checked on the way in.</p>
+          </div>
+          <div class="mm-grid mm-grid--3">
+            <div class="mm-panel">
+              <div class="mm-feature">
+                <span class="mm-icon-box mm-icon-box--tint">{{icon:share}}</span>
+                <div class="mm-feature__title">Peer to peer</div>
+                <p class="mm-feature__text">Files come from a swarm of seeders, not one server. Every downloader can turn around and seed, so more demand means more capacity.</p>
+              </div>
+            </div>
+            <div class="mm-panel">
+              <div class="mm-feature">
+                <span class="mm-icon-box mm-icon-box--tint">{{icon:shield}}</span>
+                <div class="mm-feature__title">Signed by a trusted set</div>
+                <p class="mm-feature__text">A small group signs a record of each model. Your client accepts it only with enough valid signatures, so nobody can publish a fake under the project's name.</p>
+              </div>
+            </div>
+            <div class="mm-panel">
+              <div class="mm-feature">
+                <span class="mm-icon-box mm-icon-box--tint">{{icon:lock}}</span>
+                <div class="mm-feature__title">Model files only</div>
+                <p class="mm-feature__text">By design the protocol accepts model weights and a few file types, and nothing else. That check is already in the code, not a promise.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VERIFY -->
+    <section class="mm-section" id="verify">
+      <div class="mm-container">
+        <div class="mm-grid mm-grid--2" style="--mm-grid-gap: var(--mm-space-9); align-items: center">
+          <div class="mm-section-head" style="max-width:none">
+            <span class="mm-eyebrow mm-eyebrow--ok">Check it yourself</span>
+            <h2>You never have to take our word for it.</h2>
+            <p class="mm-section-head__lead">Download a model by name. The client checks the signatures against a list of keys you pin, then checks every byte against the signed hash. If one byte is wrong, it stops.</p>
+            <div class="mm-cluster" style="--mm-cluster-gap: var(--mm-space-2)">
+              <span class="mm-tag">content addressing</span>
+              <span class="mm-tag">public signatures</span>
+              <span class="mm-tag">peer to peer</span>
+              <span class="mm-tag">resumable</span>
+            </div>
+          </div>
+          <div class="mm-terminal">
+            <div class="mm-terminal__bar"><span class="mm-terminal__dots"><span></span><span></span><span></span></span>bitmodel get</div>
+            <div class="mm-terminal__body">
+              <span class="mm-terminal__line"><span class="mm-terminal__prompt">$ </span><span class="mm-terminal__cmd">bitmodel get --model tinyllama-1.1b</span></span>
+              <span class="mm-terminal__line mm-terminal__muted">checking signatures against your pinned keys ...</span>
+              <span class="mm-terminal__line mm-terminal__muted">fetching from 2 seeders, verifying every byte ...</span>
+              <span class="mm-terminal__line mm-terminal__ok">done: signed by mirror-a, every byte matches.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROADMAP -->
+    <section class="mm-section" id="roadmap">
+      <div class="mm-container">
+        <div class="mm-stack mm-stack--8">
+          <div class="mm-section-head mm-section-head--center">
+            <span class="mm-eyebrow">Roadmap</span>
+            <h2>Rough and honest. It will change.</h2>
+            <p class="mm-section-head__lead">We planned this for weeks before writing code. It is early, and a peer-to-peer network is nothing without people on it, so we are growing it slowly.</p>
+          </div>
+          <div class="mm-steps" style="max-width: 46rem; margin-left:auto; margin-right:auto">
+            <div class="mm-step mm-step--now">
+              <div class="mm-step__rail"><span class="mm-step__index">01</span><span class="mm-step__line"></span></div>
+              <div class="mm-step__body">
+                <div class="mm-cluster"><span class="mm-step__title">Now: the working core.</span><span class="mm-badge mm-badge--brand">MVP</span></div>
+                <p class="mm-step__text">One client binary. Sign and verify with a quorum, transfer peer to peer with resume, and seed what you downloaded. A self-hosted relay, a directory, and an always-on seeder.</p>
+              </div>
+            </div>
+            <div class="mm-step">
+              <div class="mm-step__rail"><span class="mm-step__index">02</span><span class="mm-step__line"></span></div>
+              <div class="mm-step__body">
+                <div class="mm-cluster"><span class="mm-step__title">0.1 beta.</span><span class="mm-badge">Next</span></div>
+                <p class="mm-step__text">Privacy options for seeders, a simpler one-command setup, and a small group of testers.</p>
+              </div>
+            </div>
+            <div class="mm-step mm-step--goal">
+              <div class="mm-step__rail"><span class="mm-step__index">03</span><span class="mm-step__line"></span></div>
+              <div class="mm-step__body">
+                <div class="mm-cluster"><span class="mm-step__title">Later.</span><span class="mm-badge mm-badge--ok">The goal</span></div>
+                <p class="mm-step__text">More models, more seeders, a federation of signers, and stronger seeder privacy.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="mm-container mm-section" id="get">
+      <div class="mm-cta-band">
+        <span class="mm-eyebrow">Try it, or read how it works</span>
+        <h2 style="margin-top: var(--mm-space-4)">Small enough that one person can read the whole thing.</h2>
+        <p class="mm-section-head__lead" style="margin: var(--mm-space-4) auto 0; max-width: 40rem">The code is public and kept small on purpose. Grab the client, read the whitepaper, or read the source.</p>
+        <div class="mm-cluster mm-cluster--center" style="margin-top: var(--mm-space-7); --mm-cluster-gap: var(--mm-space-3)">
+          <a class="mm-btn mm-btn--primary" href="{{DOWNLOAD_URL}}" target="_blank" rel="noopener">{{icon:download}}Download</a>
+          <a class="mm-btn mm-btn--secondary" href="{{GITHUB_URL}}" target="_blank" rel="noopener">{{icon:code}}View on GitHub{{icon:external:16}}</a>
+          <a class="mm-btn mm-btn--ghost" href="{{WHITEPAPER_URL}}" target="_blank" rel="noopener">{{icon:file-text}}Whitepaper</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="mm-container site-footer">
+    <div class="mm-cluster mm-cluster--between" style="-webkit-align-items:flex-start; align-items:flex-start; --mm-cluster-gap: var(--mm-space-6)">
+      <div class="mm-stack mm-stack--3" style="max-width: 28rem">
+        <span class="site-brand">{{logo}}BitModel</span>
+        <p class="mm-text-muted mm-text-sm">Peer-to-peer mirroring for open-source model weights. A research project by Modelmirror.org.</p>
+      </div>
+      <nav class="mm-cluster" aria-label="Footer" style="--mm-cluster-gap: var(--mm-space-5)">
+        <a class="mm-nav__link" href="{{GITHUB_URL}}" target="_blank" rel="noopener">GitHub</a>
+        <a class="mm-nav__link" href="{{WHITEPAPER_URL}}" target="_blank" rel="noopener">Whitepaper</a>
+        <a class="mm-nav__link" href="https://modelmirror.org">Modelmirror.org</a>
+        <a class="mm-nav__link" href="#roadmap">Roadmap</a>
+      </nav>
+    </div>
+    <hr class="mm-divider" style="margin: var(--mm-space-6) 0">
+    <div class="mm-cluster mm-cluster--between mm-text-faint mm-text-sm" style="--mm-cluster-gap: var(--mm-space-4)">
+      <span>No analytics. No third parties.</span>
+      <span>Built with <strong>@modelmirror/ui&nbsp;v{{UI_VERSION}}</strong> · build <span class="mm-text-mono">{{BUILD_HASH}}</span></span>
+    </div>
+  </footer>
+
+  <script type="module" src="./ui.js"></script>
+</body>
+</html>

@@ -2,10 +2,8 @@
 target/
 **/*.rs.bk
 
-# Internal planning / specs / ops notes — NEVER publish
+# Internal only, never publish
 internal/
-vps.md
-# real (generated) trust config; commit trust.toml.example instead
 **/deploy/keys/
 **/trust.toml
 
@@ -30,7 +28,6 @@ registry.db*
 .claude/settings.local.json
 .DS_Store
 
-# Node / landing page (future)
+# Landing page (dist/ is committed)
 landingpage/node_modules/
-landingpage/dist/
 landingpage/.next/

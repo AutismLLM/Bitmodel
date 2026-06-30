@@ -1,0 +1,52 @@
+/* Page-specific composition for the BitModel landing. Reusable pieces live in @modelmirror/ui. */
+.site-header {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  gap: var(--mm-space-3);
+  padding-top: calc(var(--mm-space-4) + env(safe-area-inset-top, 0px));
+  padding-bottom: var(--mm-space-4);
+}
+.site-brand {
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  -webkit-align-items: center;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--mm-font-mono);
+  font-size: var(--mm-text-lg);
+  font-weight: var(--mm-weight-semibold);
+  letter-spacing: -0.03em;
+  color: var(--mm-text-strong);
+  text-decoration: none;
+}
+.site-brand:hover { text-decoration: none; }
+.site-brand__logo {
+  width: 2.15rem;
+  height: 2.15rem;
+  flex: none;
+  margin-right: -0.1rem;
+  -webkit-filter: drop-shadow(0 0 5px rgba(20, 121, 255, 0.35));
+  filter: drop-shadow(0 0 5px rgba(20, 121, 255, 0.35));
+}
+
+/* Green check used in the hero trust row. */
+.site-tick {
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  color: var(--mm-ok);
+}
+
+.site-footer {
+  padding-top: var(--mm-space-9);
+  padding-bottom: calc(var(--mm-space-9) + env(safe-area-inset-bottom, 0px));
+}
+
+@media (max-width: 40rem) {
+  .site-nav-link { display: none; }
+}

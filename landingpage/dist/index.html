@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BitModel. Peer-to-peer mirroring for open-source model weights.</title>
+  <meta name="description" content="BitModel moves open-source model files from anyone who has them to anyone who wants them. Checked down to the byte, resumable, and able to cross home networks. An open-source research project by Modelmirror.org.">
+  <meta name="color-scheme" content="dark light">
+  <meta name="ui-version" content="0.3.10">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <script>(function(){try{if(!localStorage.getItem('mm-theme'))localStorage.setItem('mm-theme','dark');}catch(e){}})();</script>
+  <script>(function(){try{var t=localStorage.getItem('mm-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+</head>
+<body>
+  <a class="mm-skip-link" href="#main">Skip to content</a>
+
+  <header class="mm-container site-header">
+    <a class="site-brand" href="#main"><svg class="mml site-brand__logo" width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><linearGradient id="mmlCube" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4D97FF"/><stop offset="1" stop-color="#14D2FF"/></linearGradient><linearGradient id="mmlRefl" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2BA3FF" stop-opacity="0"/><stop offset="1" stop-color="#2BA3FF" stop-opacity="0.5"/></linearGradient><linearGradient id="mmlSheen" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9CC4FF" stop-opacity="0"/><stop offset="0.5" stop-color="#CFE5FF" stop-opacity="0.95"/><stop offset="1" stop-color="#9CC4FF" stop-opacity="0"/></linearGradient></defs><style>.mml .mml-real,.mml .mml-refl,.mml .mml-emit,.mml .mml-glint{transform-box:fill-box;transform-origin:center}.mml .mml-real{animation:mml-bob 3.4s ease-in-out infinite}.mml .mml-refl{animation:mml-bob 3.4s ease-in-out infinite}.mml .mml-emit{animation:mml-emit 3.4s cubic-bezier(.4,0,.2,1) infinite}.mml .mml-glint{animation:mml-glint 3.4s ease-in-out infinite}@keyframes mml-bob{0%,100%{transform:translateX(0)}50%{transform:translateX(-1.2px)}}@keyframes mml-emit{0%{transform:translateX(0) scale(.9);opacity:0}22%{transform:translateX(0) scale(1);opacity:.95}100%{transform:translateX(-11px) scale(1);opacity:0}}@keyframes mml-glint{0%{transform:translateY(-8px);opacity:0}25%,40%{opacity:.9}100%{transform:translateY(8px);opacity:0}}@media (prefers-reduced-motion:reduce){.mml .mml-real,.mml .mml-refl{animation:none;transform:none}.mml .mml-emit{animation:none;opacity:0}.mml .mml-glint{animation:none;opacity:.7;transform:none}}</style><g transform="translate(32 0) scale(-1 1)"><g class="mml-refl"><g transform="translate(1.86 8.08) scale(0.72)" fill="none" stroke="url(#mmlRefl)" stroke-width="2.78" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 20 6.5 20 15.5 12 20 4 15.5 4 6.5Z"/><path d="M4 6.5 12 11 20 6.5"/><path d="M12 11 12 20"/></g></g></g><line x1="16" y1="5" x2="16" y2="27" stroke="url(#mmlSheen)" stroke-width="1.6" stroke-linecap="round"/><line class="mml-glint" x1="16" y1="12.5" x2="16" y2="19.5" stroke="#EAF4FF" stroke-width="2.1" stroke-linecap="round"/><g class="mml-real"><g transform="translate(1.86 8.08) scale(0.72)" fill="none" stroke="url(#mmlCube)" stroke-width="2.78" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 20 6.5 20 15.5 12 20 4 15.5 4 6.5Z"/><path d="M4 6.5 12 11 20 6.5"/><path d="M12 11 12 20"/></g></g><g class="mml-emit" opacity="0"><g transform="translate(1.86 8.08) scale(0.72)" fill="none" stroke="url(#mmlCube)" stroke-width="2.78" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 20 6.5 20 15.5 12 20 4 15.5 4 6.5Z"/><path d="M4 6.5 12 11 20 6.5"/><path d="M12 11 12 20"/></g></g></svg>BitModel</a>
+    <nav class="mm-cluster" aria-label="Primary">
+      <a class="mm-nav__link site-nav-link" href="#how">How it works</a>
+      <a class="mm-nav__link site-nav-link" href="#roadmap">Roadmap</a>
+      <a class="mm-nav__link site-nav-link" href="https://github.com/AutismLLM/Bitmodel" target="_blank" rel="noopener">GitHub</a>
+      <mm-theme-toggle></mm-theme-toggle>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="mm-hero">
+      <span class="mm-hero__aura"></span>
+      <div class="mm-container mm-center mm-stack mm-stack--6">
+        <span class="mm-eyebrow">An open-source research project by Modelmirror.org</span>
+        <h1 class="mm-hero__title">Mirror open-source model weights, peer to peer.</h1>
+        <p class="mm-hero__lead">BitModel moves open-source model files from anyone who has them to anyone who wants them. Checked down to the byte, resumable, and able to cross home networks. It is early and we are still building, in the open.</p>
+        <div class="mm-hero__actions">
+          <a class="mm-btn mm-btn--primary mm-btn--lg" href="https://github.com/AutismLLM/Bitmodel/releases" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3v12"/><path d="M7.5 11l4.5 4.5 4.5-4.5"/><path d="M5 20.5h14"/></svg>Download</a>
+          <a class="mm-btn mm-btn--secondary mm-btn--lg" href="https://github.com/AutismLLM/Bitmodel" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8.5 8l-4 4 4 4M15.5 8l4 4-4 4"/></svg>View on GitHub<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 13v5.5A1.5 1.5 0 0 1 16.5 20h-11A1.5 1.5 0 0 1 4 18.5v-11A1.5 1.5 0 0 1 5.5 6H11"/></svg></a>
+        </div>
+        <div class="mm-cluster mm-cluster--center" style="--mm-cluster-gap: var(--mm-space-5)">
+          <span class="mm-cluster" style="--mm-cluster-gap: var(--mm-space-2)"><span class="site-tick"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 13l4 4L19 7"/></svg></span><span class="mm-text-sm mm-text-muted">Open source</span></span>
+          <span class="mm-cluster" style="--mm-cluster-gap: var(--mm-space-2)"><span class="site-tick"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 13l4 4L19 7"/></svg></span><span class="mm-text-sm mm-text-muted">Model files only</span></span>
+          <span class="mm-cluster" style="--mm-cluster-gap: var(--mm-space-2)"><span class="site-tick"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 13l4 4L19 7"/></svg></span><span class="mm-text-sm mm-text-muted">Checked by signature</span></span>
+        </div>
+        <a class="mm-nav__link mm-text-sm" href="./Modelmirror-Whitepaper.pdf" target="_blank" rel="noopener" style="display:-webkit-inline-flex;display:inline-flex;-webkit-align-items:center;align-items:center;gap:var(--mm-space-2)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h3.5"/></svg>Read the whitepaper</a>
+      </div>
+    </section>
+
+    <!-- WHAT IT IS -->
+    <section class="mm-section" id="how">
+      <div class="mm-container">
+        <div class="mm-stack mm-stack--8">
+          <div class="mm-section-head">
+            <span class="mm-eyebrow">What it is</span>
+            <h2>A small trusted group signs the truth. Anyone can seed.</h2>
+            <p class="mm-section-head__lead">Two layers, kept apart on purpose. A few signers vouch for what a model is. Everyone else supplies bandwidth, with no trust needed, because every byte is checked on the way in.</p>
+          </div>
+          <div class="mm-grid mm-grid--3">
+            <div class="mm-panel">
+              <div class="mm-feature">
+                <span class="mm-icon-box mm-icon-box--tint"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8.3 10.9l7.4-3.7M8.3 13.1l7.4 3.7"/></svg></span>
+                <div class="mm-feature__title">Peer to peer</div>
+                <p class="mm-feature__text">Files come from a swarm of seeders, not one server. Every downloader can turn around and seed, so more demand means more capacity.</p>
+              </div>
+            </div>
+            <div class="mm-panel">
+              <div class="mm-feature">
+                <span class="mm-icon-box mm-icon-box--tint"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l8 3v5.5c0 5-3.4 8.3-8 9.5-4.6-1.2-8-4.5-8-9.5V6z"/></svg></span>
+                <div class="mm-feature__title">Signed by a trusted set</div>
+                <p class="mm-feature__text">A small group signs a record of each model. Your client accepts it only with enough valid signatures, so nobody can publish a fake under the project's name.</p>
+              </div>
+            </div>
+            <div class="mm-panel">
+              <div class="mm-feature">
+                <span class="mm-icon-box mm-icon-box--tint"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4.5" y="10.5" width="15" height="10.5" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg></span>
+                <div class="mm-feature__title">Model files only</div>
+                <p class="mm-feature__text">By design the protocol accepts model weights and a few file types, and nothing else. That check is already in the code, not a promise.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VERIFY -->
+    <section class="mm-section" id="verify">
+      <div class="mm-container">
+        <div class="mm-grid mm-grid--2" style="--mm-grid-gap: var(--mm-space-9); align-items: center">
+          <div class="mm-section-head" style="max-width:none">
+            <span class="mm-eyebrow mm-eyebrow--ok">Check it yourself</span>
+            <h2>You never have to take our word for it.</h2>
+            <p class="mm-section-head__lead">Download a model by name. The client checks the signatures against a list of keys you pin, then checks every byte against the signed hash. If one byte is wrong, it stops.</p>
+            <div class="mm-cluster" style="--mm-cluster-gap: var(--mm-space-2)">
+              <span class="mm-tag">content addressing</span>
+              <span class="mm-tag">public signatures</span>
+              <span class="mm-tag">peer to peer</span>
+              <span class="mm-tag">resumable</span>
+            </div>
+          </div>
+          <div class="mm-terminal">
+            <div class="mm-terminal__bar"><span class="mm-terminal__dots"><span></span><span></span><span></span></span>bitmodel get</div>
+            <div class="mm-terminal__body">
+              <span class="mm-terminal__line"><span class="mm-terminal__prompt">$ </span><span class="mm-terminal__cmd">bitmodel get --model tinyllama-1.1b</span></span>
+              <span class="mm-terminal__line mm-terminal__muted">checking signatures against your pinned keys ...</span>
+              <span class="mm-terminal__line mm-terminal__muted">fetching from 2 seeders, verifying every byte ...</span>
+              <span class="mm-terminal__line mm-terminal__ok">done: signed by mirror-a, every byte matches.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROADMAP -->
+    <section class="mm-section" id="roadmap">
+      <div class="mm-container">
+        <div class="mm-stack mm-stack--8">
+          <div class="mm-section-head mm-section-head--center">
+            <span class="mm-eyebrow">Roadmap</span>
+            <h2>Rough and honest. It will change.</h2>
+            <p class="mm-section-head__lead">We planned this for weeks before writing code. It is early, and a peer-to-peer network is nothing without people on it, so we are growing it slowly.</p>
+          </div>
+          <div class="mm-steps" style="max-width: 46rem; margin-left:auto; margin-right:auto">
+            <div class="mm-step mm-step--now">
+              <div class="mm-step__rail"><span class="mm-step__index">01</span><span class="mm-step__line"></span></div>
+              <div class="mm-step__body">
+                <div class="mm-cluster"><span class="mm-step__title">Now: the working core.</span><span class="mm-badge mm-badge--brand">MVP</span></div>
+                <p class="mm-step__text">One client binary. Sign and verify with a quorum, transfer peer to peer with resume, and seed what you downloaded. A self-hosted relay, a directory, and an always-on seeder.</p>
+              </div>
+            </div>
+            <div class="mm-step">
+              <div class="mm-step__rail"><span class="mm-step__index">02</span><span class="mm-step__line"></span></div>
+              <div class="mm-step__body">
+                <div class="mm-cluster"><span class="mm-step__title">0.1 beta.</span><span class="mm-badge">Next</span></div>
+                <p class="mm-step__text">Privacy options for seeders, a simpler one-command setup, and a small group of testers.</p>
+              </div>
+            </div>
+            <div class="mm-step mm-step--goal">
+              <div class="mm-step__rail"><span class="mm-step__index">03</span><span class="mm-step__line"></span></div>
+              <div class="mm-step__body">
+                <div class="mm-cluster"><span class="mm-step__title">Later.</span><span class="mm-badge mm-badge--ok">The goal</span></div>
+                <p class="mm-step__text">More models, more seeders, a federation of signers, and stronger seeder privacy.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="mm-container mm-section" id="get">
+      <div class="mm-cta-band">
+        <span class="mm-eyebrow">Try it, or read how it works</span>
+        <h2 style="margin-top: var(--mm-space-4)">Small enough that one person can read the whole thing.</h2>
+        <p class="mm-section-head__lead" style="margin: var(--mm-space-4) auto 0; max-width: 40rem">The code is public and kept small on purpose. Grab the client, read the whitepaper, or read the source.</p>
+        <div class="mm-cluster mm-cluster--center" style="margin-top: var(--mm-space-7); --mm-cluster-gap: var(--mm-space-3)">
+          <a class="mm-btn mm-btn--primary" href="https://github.com/AutismLLM/Bitmodel/releases" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3v12"/><path d="M7.5 11l4.5 4.5 4.5-4.5"/><path d="M5 20.5h14"/></svg>Download</a>
+          <a class="mm-btn mm-btn--secondary" href="https://github.com/AutismLLM/Bitmodel" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8.5 8l-4 4 4 4M15.5 8l4 4-4 4"/></svg>View on GitHub<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 13v5.5A1.5 1.5 0 0 1 16.5 20h-11A1.5 1.5 0 0 1 4 18.5v-11A1.5 1.5 0 0 1 5.5 6H11"/></svg></a>
+          <a class="mm-btn mm-btn--ghost" href="./Modelmirror-Whitepaper.pdf" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h3.5"/></svg>Whitepaper</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="mm-container site-footer">
+    <div class="mm-cluster mm-cluster--between" style="-webkit-align-items:flex-start; align-items:flex-start; --mm-cluster-gap: var(--mm-space-6)">
+      <div class="mm-stack mm-stack--3" style="max-width: 28rem">
+        <span class="site-brand"><svg class="mml site-brand__logo" width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><linearGradient id="mmlCube" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4D97FF"/><stop offset="1" stop-color="#14D2FF"/></linearGradient><linearGradient id="mmlRefl" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2BA3FF" stop-opacity="0"/><stop offset="1" stop-color="#2BA3FF" stop-opacity="0.5"/></linearGradient><linearGradient id="mmlSheen" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9CC4FF" stop-opacity="0"/><stop offset="0.5" stop-color="#CFE5FF" stop-opacity="0.95"/><stop offset="1" stop-color="#9CC4FF" stop-opacity="0"/></linearGradient></defs><style>.mml .mml-real,.mml .mml-refl,.mml .mml-emit,.mml .mml-glint{transform-box:fill-box;transform-origin:center}.mml .mml-real{animation:mml-bob 3.4s ease-in-out infinite}.mml .mml-refl{animation:mml-bob 3.4s ease-in-out infinite}.mml .mml-emit{animation:mml-emit 3.4s cubic-bezier(.4,0,.2,1) infinite}.mml .mml-glint{animation:mml-glint 3.4s ease-in-out infinite}@keyframes mml-bob{0%,100%{transform:translateX(0)}50%{transform:translateX(-1.2px)}}@keyframes mml-emit{0%{transform:translateX(0) scale(.9);opacity:0}22%{transform:translateX(0) scale(1);opacity:.95}100%{transform:translateX(-11px) scale(1);opacity:0}}@keyframes mml-glint{0%{transform:translateY(-8px);opacity:0}25%,40%{opacity:.9}100%{transform:translateY(8px);opacity:0}}@media (prefers-reduced-motion:reduce){.mml .mml-real,.mml .mml-refl{animation:none;transform:none}.mml .mml-emit{animation:none;opacity:0}.mml .mml-glint{animation:none;opacity:.7;transform:none}}</style><g transform="translate(32 0) scale(-1 1)"><g class="mml-refl"><g transform="translate(1.86 8.08) scale(0.72)" fill="none" stroke="url(#mmlRefl)" stroke-width="2.78" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 20 6.5 20 15.5 12 20 4 15.5 4 6.5Z"/><path d="M4 6.5 12 11 20 6.5"/><path d="M12 11 12 20"/></g></g></g><line x1="16" y1="5" x2="16" y2="27" stroke="url(#mmlSheen)" stroke-width="1.6" stroke-linecap="round"/><line class="mml-glint" x1="16" y1="12.5" x2="16" y2="19.5" stroke="#EAF4FF" stroke-width="2.1" stroke-linecap="round"/><g class="mml-real"><g transform="translate(1.86 8.08) scale(0.72)" fill="none" stroke="url(#mmlCube)" stroke-width="2.78" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 20 6.5 20 15.5 12 20 4 15.5 4 6.5Z"/><path d="M4 6.5 12 11 20 6.5"/><path d="M12 11 12 20"/></g></g><g class="mml-emit" opacity="0"><g transform="translate(1.86 8.08) scale(0.72)" fill="none" stroke="url(#mmlCube)" stroke-width="2.78" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 20 6.5 20 15.5 12 20 4 15.5 4 6.5Z"/><path d="M4 6.5 12 11 20 6.5"/><path d="M12 11 12 20"/></g></g></svg>BitModel</span>
+        <p class="mm-text-muted mm-text-sm">Peer-to-peer mirroring for open-source model weights. A research project by Modelmirror.org.</p>
+      </div>
+      <nav class="mm-cluster" aria-label="Footer" style="--mm-cluster-gap: var(--mm-space-5)">
+        <a class="mm-nav__link" href="https://github.com/AutismLLM/Bitmodel" target="_blank" rel="noopener">GitHub</a>
+        <a class="mm-nav__link" href="./Modelmirror-Whitepaper.pdf" target="_blank" rel="noopener">Whitepaper</a>
+        <a class="mm-nav__link" href="https://modelmirror.org">Modelmirror.org</a>
+        <a class="mm-nav__link" href="#roadmap">Roadmap</a>
+      </nav>
+    </div>
+    <hr class="mm-divider" style="margin: var(--mm-space-6) 0">
+    <div class="mm-cluster mm-cluster--between mm-text-faint mm-text-sm" style="--mm-cluster-gap: var(--mm-space-4)">
+      <span>No analytics. No third parties.</span>
+      <span>Built with <strong>@modelmirror/ui&nbsp;v0.3.10</strong> · build <span class="mm-text-mono">e8f718508f5a</span></span>
+    </div>
+  </footer>
+
+  <script type="module" src="./ui.js"></script>
+</body>
+</html>
